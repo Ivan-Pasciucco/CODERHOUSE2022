@@ -1,0 +1,72 @@
+<div class="col-sm-12 col-lg-6 align-items-center justify-content-center" style="margin-top:2%">
+  <div class="bg-dark border border-info rounded shadow p-3 mb-5" style="overflow-x:auto;">
+    <% if(productos.length==0){ %>
+      <h2>No hay productos</h2>
+      <% }else{ %>
+      <table class="table table-hover table-dark table-responsive text-light">
+        <tr>
+          <td colspan="5">
+            <h2 class="text-center text-info">Productos</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Categorias</b>
+          </td>
+          <td colspan="4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" name="filtro" id="flexSwitchCheckDefault" onclick="filtroCat('all')" checked>
+              <label class="form-check-label" for="flexSwitchCheckDefault">
+                All
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="radio" name="filtro" id="Games" onclick="filtroCat('Impresoras')">
+              <label class="form-check-label" for="flexSwitchCheckDefault"> Games
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="radio" name="filtro" id="Windows" onclick="filtroCat('Extrusoras')">
+              <label class="form-check-label" for="flexSwitchCheckDefault"> Windows
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="radio" name="filtro" id="Software" onclick="filtroCat('Filamentos')">
+              <label class="form-check-label" for="flexSwitchCheckDefault"> Software
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td> <b>Foto</b> </td>
+          <td> <b>Descripción</b> </td>
+          <td> <b>Precio</b> </td>
+          <td> <b>Categoria</b> </td>
+          <td> <b>Accion</b> </td>
+        </tr>
+        <% for (let i=0; i < productos.length; i++) { %>
+        <tr>
+          <td> <img width="70" src=<%=productos[i].foto %>> </td>
+          <td>
+            <%= productos[i].descripcion %>
+          </td>
+          <td> $<%= productos[i].precio %>
+          </td>
+          <td>
+            <%= productos[i].categoria %>
+          </td>
+          <td>
+          <button onclick="prodById(`<%= productos[i].id %>`)" style="background: none; border: 0;">
+            <img width="20" title="Editar producto" src="/icon/editar.png">
+          </button>
+
+          <a href="/productos/delete/<%= productos[i].id %>" style="text-decoration: none;">
+            <img width="20" title="Eliminar producto" src="/icon/eliminar.png">
+          </a>
+        </td>
+      </tr>
+      <% }%>
+    </table>
+    <% }%>
+  </div>
+</div>

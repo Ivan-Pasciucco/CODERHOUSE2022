@@ -1,0 +1,31 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav'); %>
+
+<div class=" row align-items-center justify-content-center" style="margin-top:5%">
+  <div class="col-md-6 bg-dark border border-info rounded shadow p-3 mb-5">
+    <h2 class="text-center text-info">Register user</h2>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+      <br>
+      <input type="email" class="form-control" name="username" placeholder="Email" required>
+      <br>
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+      <br>
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+      <br>
+      <input type="text" class="form-control" name="direccion" placeholder="Dirección" required>
+      <br>
+      <input type="number" class="form-control" name="edad" placeholder="Edad" required>
+      <br>
+      <input id="numTel" type="tel" class="form-control" name="numtel" placeholder="Numero de telefono" onblur="process(event)" required>
+      <span class="alert alert-danger" style="display: none"></span>
+      <br><br>
+      <input type="file" class="form-control" name="avatar" required>
+      <br>
+      <input type='submit' class="btn btn-success btn-sm" value="Registrar"> </input>
+    </form>
+    <hr>
+    <a href="/login" class="btn btn-primary btn-sm">Go to login</a>
+  </div>
+</div>
+
+<%- include('../partials/foot'); %>

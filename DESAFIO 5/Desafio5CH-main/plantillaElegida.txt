@@ -1,0 +1,1 @@
+En mi caso elijo como plantilla favorita EJS, por la facilidad para manejar y por la sintaxis similar a js

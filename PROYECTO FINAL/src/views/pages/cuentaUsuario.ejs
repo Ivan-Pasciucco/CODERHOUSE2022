@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav'); %>
+<div class=" col-12 col-lg-3 align-items-center justify-content-center" style="margin-top:2%">
+  <div class="bg-dark border border-info rounded shadow p-3 mb-5" style="overflow-x:auto;">
+    <table class="table table-hover table-dark table-responsive text-light">
+      <tr>
+        <td colspan="2">
+          <h2 class="text-center text-info">Datos Usuario</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Nombre: <%= user.nombre %></h4>
+          <h4>Email: <%= user.email %></h4>
+          <h4>Numero telefónico: <%= user.numTel %></h4>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div align="center">
+            <a href="/login/logout">
+              <img width="30" title="Logout" src="/icon/exit.png">
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

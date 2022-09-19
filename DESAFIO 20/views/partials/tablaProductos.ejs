@@ -1,0 +1,55 @@
+<div class=" row align-items-center justify-content-center" style="margin-top:3%">
+  <div class="col-sm-6 bg-secondary border border-info rounded shadow p-2 mb-5">
+    <table class="table table-sm text-secondary">
+      <thead>
+        <tr>
+          <td>
+            <h2 class="text-center text-light">Welcome</h2>
+            <h3 class="text-center text-dark"><%= nombre %></h3>
+          </td>
+          <td>
+            <a href="/login/logout" class="btn btn-danger btn-sm">Cerrar Sesión</a>
+          </td>
+        </tr>
+      </thead>
+    </table>
+
+  </div>
+</div>
+<div class="col-sm-6 bg-secondary border border-info rounded shadow p-3 mb-5">
+  <h2 class="text-center">Enter product
+  </h2>
+  <br>
+  <form id="formulario">
+    <div class="text">
+      <b>Nombre:</b>
+      <br>
+      <input type="hidden" name="idProduct" id="idProduct" value="1" required>
+      <input type="text" class="form-control" name="title" id="titulo" required>
+    </div>
+    <div class="form-group">
+      <b>Price:</b>
+      <br>
+      <input type="number" step="0.01" class="form-control" name="price" id="precio" required>
+    </div>
+    <div class="form-group">
+      <b>Url photo:</b>
+      <br>
+      <input type="url" name="thumbnail" class="form-control" id="foto" required>
+    </div>
+    <br>
+    <input type="submit" id="guardar" class="btn btn-sm btn-success" value="Guardar"></input>
+  </form>
+</div>
+
+<div class=" row align-items-center justify-content-center">
+  <div class="col-sm-6 bg-secondary border border-info rounded shadow p-3 mb-5">
+
+    <div class="table-responsive ">
+      <h2 class="text-center text-info">Products</h2>
+      <hr>
+      <table class="table text-secondary table-dark table-striped" id="productos">
+      </table>
+    </div>
+  </div>
+</div>

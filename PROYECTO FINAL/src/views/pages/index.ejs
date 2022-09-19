@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+
+<body class=" row  justify-content-center bg-dark text-info">
+  <%- include('../partials/navLogin'); %>
+
+  <!-- <%- include('../partials/infoUser'); %> -->
+  <%- include('../partials/tablaProductos'); %>
+  <%- include('../partials/carrito'); %>
+  <%- include('../partials/soporte'); %>
+  <script>
+    filtroChecked = '<%= filt %>';
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<div class=" row align-items-center justify-content-center" style="margin-top:3%">
+    <div class="col-sm-4 bg-light border border-secondary rounded shadow p-3 mb-5"> 
+        <table class="table text-secondary">
+            <tr>
+                <td colspan="2">
+                    <h2 class="text-center text-secondary">API INFO</h2>
+                </td>
+            </tr>
+            <tr>
+                <td> Argumentos de entrada </td>
+                <td> <%= process.argv.slice(2) %> </td>
+            </tr>
+            <tr>
+                <td> Nombre de la plataforma </td>
+                <td> <%= process.platform %> </td>
+            </tr>
+            <tr>
+                <td> Version de Node.js </td>
+                <td> <%= process.version %> </td>
+            </tr>
+            <tr>
+                <td> Memoria total reservada </td>
+                <td> <%= process.memoryUsage().rss %> </td>
+            </tr>
+            <tr>
+                <td> Ruta de ejecución </td>
+                <td> <%= process.argv[0] %> </td>
+            </tr>
+            <tr>
+                <td> Process Id </td>
+                <td> <%= process.pid %> </td>
+            </tr>
+            <tr>
+                <td> Carpeta del proyecto </td>
+                <td> <%= process.cwd() %> </td>
+            </tr>
+            <tr>
+                <td> Cantidad de CPUs </td>
+                <td> <%= cpus %> </td>
+            </tr>
+        </table>
+    </div>
+</div>

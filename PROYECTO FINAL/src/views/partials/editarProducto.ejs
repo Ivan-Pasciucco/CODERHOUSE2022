@@ -1,0 +1,37 @@
+<div id="divEdit" class=" col-sm-12 col-lg-3 align-items-center justify-content-center"
+    style="margin-top:2%;display: none">
+    <div class="bg-light border border-secondary rounded shadow p-3 mb-5">
+        <form id="editForm" action="/productos/update" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center">Editar producto</h2>
+            <br>
+            <div class="form-group">
+                <b>Descripción:</b>
+                <br>
+                <input type="hidden" class="form-control" name="idProduct" id="idProduct" required>
+                <input type="text" class="form-control" name="descripcion" id="descripcion" required>
+            </div>
+            <div class="form-group">
+                <b>Precio:</b>
+                <br>
+                <input type="number" step="0.01" class="form-control" name="precio" id="precio" required>
+            </div>
+            <div class="form-group">
+                <b>Categoria:</b>
+                <br>
+                <select id="categoria" name="categoria" class="form-control" required>
+                    <option value="Games">Games</option>
+                    <option value="Windows">Windows</option>
+                    <option value="Software">Software</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <b>Foto:</b>
+                <br>
+                <input type="file" name="foto" class="form-control" id="foto">
+            </div>
+            <br>
+            <input type="submit" id="guardar" class="btn btn-outline-success" value="Guardar"></input>
+            <button onclick="cancelEdit()" class="btn btn-outline-danger">Cancelar</button>
+        </form>
+    </div>
+</div>

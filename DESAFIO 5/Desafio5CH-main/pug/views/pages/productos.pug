@@ -1,0 +1,28 @@
+include ../partials/head
+body(class='row align-items-center justify-content-center')
+    -if(productos.length !== 0){
+    div(class='col-sm-4 bg-light border border-secondary rounded shadow p-3 mb-5')
+        div(class='table-responsive')
+            table(class='table text-secondary')
+                tr
+                    td(colspan='3')
+                        h2(class='text-center text-secondary')='Productos'
+                tr
+                    th
+                        h5='Nombre'
+                    th
+                        h5='Precio'
+                    th
+                        h5='Foto'
+                -for(let i in productos){
+                tr
+                    td= productos[i].title
+                    td= productos[i].price
+                    td
+                        img(width='50' src= productos[i].thumbnail)
+                -}
+    -}else{
+        include ../partials/mensajeError
+    -}
+    div(class='d-flex justify-content-center')
+        a(href='/' type='button' class='btn btn-primary col-sm-3')= 'Crear nuevo producto'

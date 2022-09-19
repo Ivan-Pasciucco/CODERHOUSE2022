@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+
+<body class=" row align-items-center justify-content-center bg-dark text-secondary">
+  <%- include('../partials/registerPartial'); %>
+  <script>
+    function process() {
+      const pass1 = document.getElementById('pass1').value;
+      const pass2 = document.getElementById('pass2').value;
+      const error = document.getElementById("alertaError");
+      const espacio = document.getElementById("espacio");
+
+      if (pass1 && pass2) {
+        if (pass1 === pass2) {
+          error.style.display = "none";
+          espacio.style.display = "none";
+        } else {
+          error.style.display = "";
+          espacio.style.display = "";
+          error.innerHTML = `Debes ingresar el mismo password en ambos campos`;
+          document.getElementById('pass1').value = '';
+          document.getElementById('pass2').value = '';
+        }
+      }
+    }
+  </script>
+  <%- include('../partials/foot'); %>
+
+</body>
+
+</html>

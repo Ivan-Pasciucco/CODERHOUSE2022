@@ -1,0 +1,30 @@
+<div class="col-md-12 align-self-left justify-content-center justify-content-md-start float-left" style="margin-top:2%">
+    <div class="bg-dark border border-info rounded shadow p-3 mb-5 table-responsive" >
+        <table class="table table-dark text-white">
+            <tr>
+                <td colspan="4">
+                    <h2 class="text-center text-info">Welcome to Hard Store</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img width="200" src=<%= user.avatar %> >
+                </td>
+                <td>
+                    <h3>Name: <%= user.nombre %></h3>
+                    <h3>Age: <%= user.edad %> years</h3>
+                    <h3>Address: <%= user.direccion %></h3>
+                    <h3>Email: <%= user.email %></h3>
+                    <h3>Telephone number: <%= user.numTel %></h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div align="center">
+                        <a href="/login/logout" class="btn btn-danger btn-lg btn-block">Logout</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

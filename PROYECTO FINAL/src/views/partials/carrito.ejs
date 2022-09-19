@@ -1,0 +1,55 @@
+<div class=" col-12 col-lg-4 align-items-center justify-content-center" style="margin-top:2%">
+  <div class="bg-dark border border-info rounded shadow p-3 mb-5" style="overflow-x:auto;">
+    <% if(!carrito || carrito.productos.length==0){ %>
+    <h2>Carrito Vacio</h2>
+    <hr>
+    <h5>Llevate eso que queres! Presiona sobre el icono ->
+      <img width="25" title="Agregar al carrito" src="/icon/addCar.png">
+    </h5>
+    <% }else { %>
+    <table class="table table-hover table-dark table-responsive text-light">
+      <tr>
+        <td colspan="5">
+          <h2 class="text-center text-info">Mi pedido</h2>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Imagen</b> </td>
+        <td> <b>Detalle</b> </td>
+        <td> <b>Precio</b> </td>
+        <td> <b>Categoria</b> </td>
+        <td> <b></b> </td>
+      </tr>
+      <% for (let i=0; i < carrito.productos.length; i++) { %>
+      <tr>
+        <td> <img width="65" src=<%=carrito.productos[i].foto %>> </td>
+        <td>
+          <%= carrito.productos[i].descripcion %>
+        </td>
+        <td> $<%= carrito.productos[i].precio %>
+        </td>
+        <td>
+          <%= carrito.productos[i].categoria %>
+        </td>
+        <td>
+          <a href="/carrito/delProd/<%= email %>/<%= carrito.productos[i].id %>" style="text-decoration: none;">
+            <img width="25" title="Eliminar producto" src="/icon/eliminar.png">
+          </a>
+        </td>
+      </tr>
+      <% } %>
+      <tr>
+        <td colspan="5">
+          <div align="center">
+            <a href="/carrito/finCar/<%= user.nombre %>/<%= user.email %>" style="text-decoration: overline" ;>
+              <img width="30" title="Finalizar pedido" src="/icon/check1.png">
+            </a>
+            <a href="/carrito/delCar/<%= email %>" style="text-decoration: none" ;>
+              <img width="30" title="Finalizar pedido" src="/icon/cancel.png"></a>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <% } %>
+  </div>
+</div>

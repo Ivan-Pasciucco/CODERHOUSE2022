@@ -1,0 +1,40 @@
+[2022-07-29T08:23:25.016] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:43:35.081] [ERROR] error - El usuario no estaba logueado, sin acceso a esta ruta
+[2022-07-29T18:54:22.054] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:54:31.624] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:54:48.398] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:54:56.165] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:55:07.902] [ERROR] error - Ah ocurrido un error de autenticacion
+[2022-07-29T18:56:35.818] [ERROR] error - Ha ocurrido el siguiente error: MongoExpiredSessionError: Cannot use a session that has ended
+[2022-07-29T18:57:02.752] [ERROR] error - RestException [Error]: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+    at success (/home/ivan/Descargas/desafio-18-main/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/ivan/Descargas/desafio-18-main/node_modules/asap/asap.js:40:19)
+    at flush (/home/ivan/Descargas/desafio-18-main/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21608,
+  moreInfo: 'https://www.twilio.com/docs/errors/21608',
+  details: undefined
+}
+[2022-07-29T18:57:11.263] [ERROR] error - Ha ocurrido el siguiente error: MongoExpiredSessionError: Cannot use a session that has ended
+[2022-07-29T18:57:22.583] [ERROR] error - Ha ocurrido el siguiente error: MongoExpiredSessionError: Cannot use a session that has ended
+[2022-07-29T19:03:32.861] [ERROR] error - Ha ocurrido el siguiente error: MongoExpiredSessionError: Cannot use a session that has ended
+[2022-07-29T19:04:18.973] [ERROR] error - RestException [Error]: The From phone number +14155238886 is not a valid, SMS-capable inbound phone number or short code for your account.
+    at success (/home/ivan/Descargas/desafio-18-main/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/ivan/Descargas/desafio-18-main/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/ivan/Descargas/desafio-18-main/node_modules/asap/asap.js:40:19)
+    at flush (/home/ivan/Descargas/desafio-18-main/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21606,
+  moreInfo: 'https://www.twilio.com/docs/errors/21606',
+  details: undefined
+}
+[2022-07-29T19:44:42.064] [ERROR] error - Ha ocurrido el siguiente error: MongoNotConnectedError: MongoClient must be connected to perform this operation

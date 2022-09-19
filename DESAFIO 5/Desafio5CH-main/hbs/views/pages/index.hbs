@@ -1,0 +1,31 @@
+{{> head }}
+<body class=" row align-items-center justify-content-center text-primary">
+    <div class="col-sm-3 bg-light border border-secondary rounded shadow p-3 mb-5" style="margin-top:3%"> 
+        <h2 class="text-center">Ingrese producto</h2>
+        <br>
+        <form action="/productos"  method="POST">
+            <div class="texte">
+                <input type="hidden" name="id" value="0">
+                <b>Nombre:</b>
+                <br>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="form-group">
+                <b>Precio $:</b>
+                <br>
+                <input type="number" step="0.01" class="form-control" name="price" required>
+            </div>
+            <div class="form-group">
+                <b>Url Foto:</b>
+                <br>
+                <input type="url" name="thumbnail" class="form-control" required>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-success" value="Guardar">
+        </form>
+    </div>
+    {{> mensajeExito}}
+    <div class=" d-flex justify-content-center">
+        <a href="/productos" type="button" class="btn btn-primary col-sm-2">Ver productos</a>
+    </div>        
+</body>

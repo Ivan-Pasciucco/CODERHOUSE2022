@@ -1,0 +1,29 @@
+<%- include('../partials/head') %>
+
+<body class=" row align-items-center justify-content-center text-secondary">
+  <%- include('../partials/registerPartial'); %>
+  <script>
+    const phoneInputField = document.querySelector("#numTel");
+    const error = document.querySelector(".alert-danger");
+
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      preferredCountries: ["ar"],
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    function process() {
+      const phoneNumber = phoneInput.getNumber();
+      error.style.display = "none";
+
+      if (phoneInput.isValidNumber()) {
+        document.getElementById("numTel").value = phoneNumber;
+      } else {
+        error.style.display = "";
+        error.innerHTML = `Invalid number`;
+        document.getElementById("numTel").value = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <title>Carga de productos</title>
+</head>
+
+<body>
+  <div class="container">
+    <input type="hidden" name="id" value="0">
+    <form role="form" action="/api/productos" method="POST">
+      <div class="form-group">
+        <label for="Nombre Producto">Nombre:</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="Precio Producto">Precio:</label>
+        <input type="number" class="form-control" id="title" name="price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Url Producto">Link:</label>
+        <input type="text" class="form-control" id="title" name="url" required>
+      </div>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

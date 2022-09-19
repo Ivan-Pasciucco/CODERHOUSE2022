@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav'); %>
+
+<body class=" row align-items-center justify-content-center text-info bg-dark">
+  <div class=" row align-items-center justify-content-center" style="margin-top:3%">
+    <div class="col-sm-4 alert alert-danger  rounded shadow p-3 mb-5">
+      <h1 class="text-center">error! your login or password was incorrect. please try again.</h1>
+      <meta http-equiv="refresh" content="2;url=/register" />
+    </div>
+  </div>
+  <div class=" row align-items-center justify-content-center">
+    <div class="col-sm-4 border border-secondary bg-dark rounded shadow p-3 mb-5">
+      <h4 class="text-center">Wait a moment</h4>
+    </div>
+  </div>
+  <%- include('../partials/foot') %>
+
+</body>
+
+</html>

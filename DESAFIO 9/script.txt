@@ -1,0 +1,127 @@
+// MongoDB Playground
+// Select the database to use.
+use('ecommerce');
+
+// The drop() command destroys all data from a collection.
+db.mensajes.drop();
+db.productos.drop();
+
+db.createCollection('mensajes');
+db.createCollection('productos');
+
+// Insert a few documents into the mensajes collection.
+db.mensajes.insertMany([
+  { 'email': 'carlos@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate()},
+  { 'email': 'ruben@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate()},
+  { 'email': 'ivan@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate()},
+  { 'email': 'franco@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate() },
+  { 'email': 'jazmin@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate() },
+  { 'email': 'bzrp@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate() },
+  { 'email': 'allweneedislove@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate()},
+  { 'email': 'fernanda@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate()},
+  { 'email': 'lucia@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate() },
+  { 'email': 'belen@gmail.com', 'message': 'buenas tardes!', 'fechaHora': ISODate() }
+]);
+db.productos.insertMany([
+    {
+"name":"Calculadora 1",
+ "description": "Calculadora nisuta simple",
+"price": 100,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500
+    },
+    {
+"name":"Calculadora 2",
+"description": "Calculadora nisuta simple",
+"price": 200,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 3",
+"description": "Calculadora nisuta simple",
+"price": 250,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 4",
+"description": "Calculadora nisuta simple",
+"price": 500,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 5",
+"description": "Calculadora nisuta simple",
+"price": 700,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 6",
+"description": "Calculadora nisuta simple",
+"price": 800,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 7",
+"description": "Calculadora nisuta simple",
+"price": 900,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 8",
+"description": "Calculadora nisuta simple",
+"price": 1500,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 9",
+"description": "Calculadora nisuta simple",
+"price": 3500,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+    {
+"name":"Calculadora 10",
+"description": "Calculadora nisuta simple",
+"price": 4990,
+"url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+"stock": 500,
+    },
+]);
+//listado de datos cargados en collections
+db.mensajes.find();
+db.productos.find();
+
+//cantidad de documentos cargados
+db.mensajes.estimatedDocumentCount();
+db.productos.estimatedDocumentCount();
+
+db.productos.insertOne({
+    "name":"Calculadora 11",
+    "description": "Calculadora nisuta simple",
+    "price": 4250,
+    "url":"https://cdn4.iconfinder.com/data/icons/leto-devices-1/64/calc_calculator_calculation-256.png",
+    "stock": 200
+});
+db.productos.find({"price": {$lt: 1000}}); //menor a 1000
+db.productos.find({"price": {$gt: 1000, $lt:3000}}); //entre 1000 y 3000
+db.productos.find({"price": {$gt: 3000}}) //mayor a 3000
+db.productos.find({},{"name":1}).sort({"price":1}).skip(2).limit(1); //el tercer producto mas barato
+db.productos.updateMany({},{$set: {"stock": 100}}); //stock a 100 de todos los productos
+db.productos.updateMany({"price": {$gt: 4000}},{$set: {"stock": 0}});//productos con menos mayot a 4000 stock en cero
+db.productos.deleteMany({"price": {$lt: 1000}}); //elimina productos menores a 1000
+
+db.createUser( {
+    user: "pepe",
+    pwd: "asd456",
+    roles: [
+      { role: "read", db: "ecommerce" }
+    ]
+  }
+)

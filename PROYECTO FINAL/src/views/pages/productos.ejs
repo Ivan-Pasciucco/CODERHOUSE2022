@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+
+<body class=" row bg-dark text-secondary">
+  <%- include('../partials/crearProductos'); %>
+  <%- include('../partials/productos'); %>
+  <%- include('../partials/editarProducto'); %>
+  <script>
+    const filtroChecked = '<%= filt %>'
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  <script src="js/crudProductos.js"></script>
+
+
+</body>
+
+</html>

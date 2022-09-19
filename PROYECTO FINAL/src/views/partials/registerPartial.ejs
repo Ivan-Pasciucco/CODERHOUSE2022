@@ -1,0 +1,23 @@
+<div class=" row align-items-center justify-content-center" style="margin-top:3%">
+    <div class="bg-dark border border-info rounded shadow p-3 mb-5" style="overflow-x:auto;">
+        <h2 class="text-center text-info">Registro de usuario</h2>
+        <form action="/register" method="POST">
+            <br>
+            <input type="email" class="form-control" name="username" placeholder="Email" required>
+            <br>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombres y apellidos" required>
+            <br>
+            <input type="tel" class="form-control" name="numtel" placeholder="Numero de telefono" required>
+            <br>
+            <input id="pass1" type="password" class="form-control" name="password" placeholder="Password" onblur="process(event)" required>
+            <br>
+            <input id="pass2" type="password" class="form-control" name="password2" placeholder="Repetir password" onblur="process(event)" required>
+            <br>
+            <span id="alertaError" class="alert alert-danger" style="display: none"></span>
+            <span id="espacio" style="display: none"><br><br></span>
+            <input type='submit' class="btn btn-sm btn-success" value="Registrar"> </input>
+        </form>
+        <hr>
+        <a href="/login" class="btn btn-sm btn-primary">Ir a login</a>
+    </div>
+</div>
